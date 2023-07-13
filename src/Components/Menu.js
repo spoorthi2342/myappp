@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Menu.css';
 
 const Menu = () => {
   // Assuming you have an array of recipes
