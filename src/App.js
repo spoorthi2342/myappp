@@ -1,22 +1,28 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import NoPage from "./Components/NoPage";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import Layout from "./Components/Layout";
-function App() {
-  return (
+import React from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import Home from './Components/Home';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Menu from './Components/Menu';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Navbar from './Components/Navbar';
+
+function App(){
+  return(
+    <>
+    {/* <h1 classname="bg-primary">React</h1>
+    <p>This is a paragraph</p> */}
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login/>} />
-          <Route path="register" element={<Register/>} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+    <Navbar/>
+    <Routes>
+      <Route path ="/" element={<Home/>}/>
+      <Route path ="/about" element={<About/>}/>
+      <Route path ="/contact" element={<Contact/>}/>
+      <Route path ="/menu" element={<Menu/>}/>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </>
   );
 }
-
 export default App;
